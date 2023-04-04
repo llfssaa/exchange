@@ -13,12 +13,14 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {MatTableModule} from "@angular/material/table";
 import {HttpClientModule} from "@angular/common/http";
+import { ExchangeConvertComponent } from './components/exchange-convert/exchange-convert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ExchangeFieldComponent
+    ExchangeFieldComponent,
+    ExchangeConvertComponent
   ],
     imports: [
         BrowserModule,

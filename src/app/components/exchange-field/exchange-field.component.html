@@ -1,7 +1,6 @@
 <div class="wrapper">
   <table mat-table class="mat-elevation-z8" [dataSource]="currencies$ | async">
     <ng-container matColumnDef="flag">
-
       <td mat-cell *matCellDef="let rate"> {{rate.flag}} </td>
     </ng-container>
     <ng-container matColumnDef="currency">
@@ -12,48 +11,12 @@
 
       <td mat-cell *matCellDef="let rate"> {{rate.value}} </td>
     </ng-container>
-    <ng-container matColumnDef="change">
 
-      <td mat-cell *matCellDef="let rate"> {{rate.change}} </td>
-    </ng-container>
+
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
 
   </table>
-
-  <div class="currency-field-wrapper">
-    <div class="currency-field">
-      <mat-form-field appearance="fill" floatLabel="always">
-        <mat-label>Amount</mat-label>
-        <input matInput type="number" class="example-right-align" placeholder="0">
-        <span matTextPrefix>$&nbsp;</span>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Select a currency</mat-label>
-        <mat-select disableRipple>
-          <mat-option value="1">Euro</mat-option>
-          <mat-option value="2">Dollars</mat-option>
-          <mat-option value="3">Leu</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-
-    <span>=</span>
-
-    <div class="currency-field">
-      <mat-form-field appearance="fill" floatLabel="always">
-        <mat-label>Amount</mat-label>
-        <input matInput type="number" class="example-right-align" placeholder="0">
-        <span matTextPrefix>€&nbsp;</span>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Select a currency</mat-label>
-        <mat-select disableRipple>
-          <mat-option value="1">Euro</mat-option>
-          <mat-option value="2">Dollars</mat-option>
-          <mat-option value="3">Leu</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-  </div>
+  <app-exchange-convert></app-exchange-convert>
 </div>
 
 

@@ -1,0 +1,10 @@
+.currency-field-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .currency-field {
+    display: flex;
+    flex-direction: column;
+  }
+}

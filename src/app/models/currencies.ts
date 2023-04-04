@@ -12,7 +12,6 @@ export interface ExchangeRates {
   flag: string,
   currency: string
   value: number
-  change: number
 }
 export interface Flags {
   [key: string]: string;
