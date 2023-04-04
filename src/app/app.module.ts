@@ -14,6 +14,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatTableModule} from "@angular/material/table";
 import {HttpClientModule} from "@angular/common/http";
 import { ExchangeConvertComponent } from './components/exchange-convert/exchange-convert.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ExchangeConvertComponent } from './components/exchange-convert/exchange
         MatOptionModule,
         MatSelectModule,
         MatTableModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

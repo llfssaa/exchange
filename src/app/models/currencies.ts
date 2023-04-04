@@ -22,3 +22,12 @@ export interface Changes {
 export interface Rates {
   [key: string]: string;
 }
+
+export interface ConvertAmount {
+  "base": string,
+  "target": string,
+  "date": string,
+  "base_amount": number,
+  "converted_amount": number,
+  "exchange_rate": number
+}

@@ -2,33 +2,29 @@
   <div class="currency-field">
     <mat-form-field appearance="fill" floatLabel="always">
       <mat-label>Amount</mat-label>
-      <input matInput type="number" class="example-right-align" placeholder="0">
-      <span matTextPrefix>$&nbsp;</span>
+      <input matInput type="number" class="example-right-align" placeholder="0" [(ngModel)]="amountFirst">
+      <span matTextPrefix>{{ currencyControl && currencySymbol[currencyControl]}}</span>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Select a currency</mat-label>
-      <mat-select disableRipple>
-        <mat-option value="1">Euro</mat-option>
-        <mat-option value="2">Dollars</mat-option>
-        <mat-option value="3">Leu</mat-option>
+      <mat-select disableRipple [(ngModel)]="currencyControl" >
+        <mat-option *ngFor="let currency of currencies " [value]="currency">{{currencyLabel[currency]}}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
-  <span>=</span>
+  <button (click)="getConvert()">=</button>
 
   <div class="currency-field">
     <mat-form-field appearance="fill" floatLabel="always">
       <mat-label>Amount</mat-label>
-      <input matInput type="number" class="example-right-align" placeholder="0">
-      <span matTextPrefix>€&nbsp;</span>
+      <input matInput type="number" class="example-right-align" placeholder="0" disabled [value]="amountSecond$ | async">
+      <span matTextPrefix>{{ currencyControl2 && currencySymbol[currencyControl2]}}</span>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Select a currency</mat-label>
-      <mat-select disableRipple>
-        <mat-option value="1">Euro</mat-option>
-        <mat-option value="2">Dollars</mat-option>
-        <mat-option value="3">Leu</mat-option>
+      <mat-select disableRipple [(ngModel)]="currencyControl2" >
+        <mat-option *ngFor="let currency2 of currencies " [value]="currency2">{{currencyLabel[currency2]}}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
