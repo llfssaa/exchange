@@ -1,6 +1,6 @@
-export type Currency = 'EUR' | 'USD' | 'GBP';
+export type Currency = 'EUR' | 'USD' | 'GBP' | 'JPY' | 'CNY';
 
-export const currencies: Currency[] = ["EUR", "USD", "GBP"]
+export const currencies: Currency[] = ["EUR", "USD", "GBP", "JPY", "CNY"]
 
 type CurrencyLiteralsType = {
   [key in Currency]: string;
@@ -10,12 +10,16 @@ type CurrencyLiteralsType = {
 export const currencyLabel: CurrencyLiteralsType = {
   EUR: 'Euro',
   USD: 'Dollar',
-  GBP: 'Pound sterling'
+  GBP: 'Pound sterling',
+  JPY: 'Japanese Yen',
+  CNY: 'Chinese Yuan'
 }
 
 export const currencySymbol: CurrencyLiteralsType = {
   EUR: '€',
   USD: '$',
-  GBP: '£'
+  GBP: '£',
+  JPY: '¥',
+  CNY: '¥'
 }
 

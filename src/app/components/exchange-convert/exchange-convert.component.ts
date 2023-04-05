@@ -15,7 +15,7 @@ export class ExchangeConvertComponent {
   currencyLabel = currencyLabel
   currencySymbol = currencySymbol
   currencyControl: Currency = 'EUR'
-  amountFirst: number = 0
+  amountFirst: number;
   currencyControl2: Currency = 'USD'
   amountSecond$: Observable<number> = new Observable<number>()
   constructor(private convertService: ConvertService) {
